@@ -12,13 +12,13 @@
                 <input type="submit" class="btn btn-primary" value="포스트">
             </div>
         </form>
-        {% if hello_world_output %}
-        <h1>
-            {{ hello_world_output.text }}
-        </h1>
+        {% if hello_world_list %}
+            {% for hello_world in hello_world_list %}
+        <h6>
+            {{ hello_world.text }}
+        </h6>
+            {% endfor %}
         {% endif %}
-        <h1>
-            {{ text }}
-        </h1>
+
     </div>
 {% endblock %}
