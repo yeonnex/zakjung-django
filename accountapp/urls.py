@@ -13,4 +13,5 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
 
     path('hello_world/', hello_world, name='hello_world'),
+
 ]
