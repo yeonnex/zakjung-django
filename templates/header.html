@@ -15,7 +15,8 @@
         </a>
         {% else %}
 
-        <a href="{% url 'accountapp:logout' %}?next={{ request.path }}">
+        <a href="{% url 'accountapp:logout' %}">
+{# ?next={{ request.path }} 삭제 #}
             <span>logout</span>
         </a>
 

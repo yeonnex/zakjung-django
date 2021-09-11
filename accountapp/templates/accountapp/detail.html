@@ -7,6 +7,7 @@
             <p>
                 {{ target_user.date_joined }}
             </p>
+
             {% if target_user.profile %}
             <h2 style="font-family: 'NanumSquareB">
                 {{ target_user.profile.nickname }}
@@ -18,6 +19,7 @@
                 </h2>
             </a>
             {% endif %}
+
             {#  만약 target_user 와 지금 접속한 유저가 같다면 링크를 보여준다.  #}
             {% if target_user == user %}
             <a href="{% url 'accountapp:update' pk=target_user.pk %}">
