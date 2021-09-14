@@ -7,11 +7,15 @@
             <p>
                 {{ target_user.date_joined }}
             </p>
+            <img src="{{ target_user.profile.image.url }}" alt="" style="height: 12rem;width: 12rem;border-radius: 20rem;margin-bottom:2rem">
 
             {% if target_user.profile %}
             <h2 style="font-family: 'NanumSquareB">
                 {{ target_user.profile.nickname }}
             </h2>
+                <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
+                    edit
+                </a>
             {% else %}
             <a href="{% url 'profileapp:create' %}">
                 <h2 style="font-family: 'NanumSquareB'">
@@ -19,6 +23,9 @@
                 </h2>
             </a>
             {% endif %}
+            <h5 style="margin-bottom: 3rem">
+                {{ target_user.profile.message }}
+            </h5>
 
             {#  만약 target_user 와 지금 접속한 유저가 같다면 링크를 보여준다.  #}
             {% if target_user == user %}

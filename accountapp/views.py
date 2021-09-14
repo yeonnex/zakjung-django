@@ -40,6 +40,7 @@ class AccountCreateView(CreateView): # CreateView를 상속받는다.
     success_url = reverse_lazy('accountapp:hello_world')
     template_name = 'accountapp/create.html'
 
+
 class AccountDetailView(DetailView):
     model = User
     context_object_name = 'target_user'
